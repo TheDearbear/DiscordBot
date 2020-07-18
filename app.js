@@ -21,7 +21,7 @@ client.on('message', msg => {
     //===========================
     //   Account Verification  ||
     //===========================
-    if (msg.channel.id == 'channelid' && msg.content.slice(0, 8) == '/verify ' && msg.content.slice(18, 19) == '') {
+    if (msg.channel.id == '696634569209806929' && msg.content.slice(0, 8) == '/verify ' && msg.content.slice(18, 19) == '') {
         var ikey = msg.content.slice(8, 18);
 
         console.log("=================New=verification============");
@@ -32,7 +32,7 @@ client.on('message', msg => {
 
         if (ikey == 'ikey' || ikey == 'ikey' || ikey == 'ikey' || ikey == 'ikey' || ikey == 'ikey' || ikey == 'ikey' || ikey == 'ikey') {
             msg.delete();
-            msg.reply("Добро пожаловать!").then(_=> msg.member.roles.remove('somerole').then(_=> msg.channel.lastMessage.delete()));
+            msg.reply("Добро пожаловать!").then(_=> msg.member.roles.remove('696634238396530729').then(_=> msg.channel.lastMessage.delete()));
 
             if (ikey == 'ikey') {
                 msg.member.roles.add('somerole');
@@ -65,7 +65,7 @@ client.on('message', msg => {
                 msg.member.roles.add('somerole');
             }
         } else msg.delete();
-    } else if (msg.channel.id == 'channelid' && msg.author.bot === false) msg.delete();
+    } else if (msg.channel.id == '696634569209806929' && msg.author.bot === false) msg.delete();
 });
 
 
