@@ -1,6 +1,5 @@
 'use strict';
 const timer = ms => new Promise(res => setTimeout(res, ms));
-const utf8 = require('utf8');
 const Discord = require('discord.js');
 const client = new Discord.Client();;
 
