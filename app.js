@@ -1,6 +1,5 @@
 'use strict';
 const timer = ms => new Promise(res => setTimeout(res, ms));
-s
 const Discord = require('discord.js');
 const client = new Discord.Client();;
 
