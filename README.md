@@ -5,9 +5,4 @@
   - подставить свои уникальные коды выдачи привилегий
   - подставить свои ID каналов на сервере
   - подставить свои ID привилегий
-
-Желательно для установки:
-  - патч для discord.js 12.2.0 на момент написания readme (https://github.com/TheDearbear/discord.js-for-discord.com-patch)
-
-
-Discord бот от https://github.com/TheDearbear
+  
