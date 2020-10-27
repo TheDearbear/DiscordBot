@@ -1,0 +1,24 @@
+{
+  "name": "discordbot",
+  "version": "1.2.0",
+  "description": "Simple Discord Bot",
+  "main": "app.js",
+  "author": {
+    "name": "TheDearbear"
+  },
+  "dependencies": {
+    "@discordjs/opus": "^0.3.2",
+    "bufferutil": "^4.0.1",
+    "discord.js": "^12.4.0",
+    "erlpack": "^0.1.3",
+    "libsodium-wrappers": "^0.7.8",
+    "opusscript": "0.0.7",
+    "prism-media": "^1.2.2",
+    "utf-8-validate": "^5.0.2",
+    "ytdl-core": "^4.0.0",
+    "ytdl-core-discord": "^1.2.4",
+    "zlib-sync": "^0.1.7"
+  },
+  "repository": "https://github.com/TheDearbear/DiscordBot",
+  "license": "MIT"
+}
