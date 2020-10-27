@@ -20,7 +20,6 @@ client.on('guildMemberAdd', member => {
 
 //===========================
 client.on('message', async msg => {
-    if (!msg.content.startsWith('/')) return;
     else {
         //===========================
         //           Basics        ||
@@ -42,7 +41,7 @@ client.on('message', async msg => {
                             path = __dirname + '/musiclib/' + args[1] + '.mp3';
                             break;
                         case 'yt':
-                            var dispatcher = connection.play(await ytdl("https://www.youtube.com/watch?v=" + videoid),
+                            var dispatcher = connection.play(await ytdl("https://www.youtube.com/watch?v=" + args[1]),
                                 { type: "opus", bitrate: connection.channel.bitrate })
                                 .on('error', console.error);
                             break;
@@ -64,7 +63,7 @@ client.on('message', async msg => {
         //===========================
         //   Account Verification  ||
         //===========================
-        if (msg.channel.id == 'channel_verify' && ut.iscommand(msg, ut.cmd('verify')) && args.lenght === 1) {
+        if (msg.channel.id == 'channel_verify' && ut.iscommand(msg, ut.cmd('verify')) && args.length === 1) {
             console.log("===============New=verification==============");
             console.log("Verificator ID: " + msg.author.id);
             console.log("Verificator Username: " + msg.author.username);
@@ -72,17 +71,17 @@ client.on('message', async msg => {
             console.log("=============================================\n");
 
             msg.delete();
-            if (args[0].lenght == 10) {
-                msg.reply("You are welcome!").then((msg) => { if (msg.author.bot) msg.delete() });
-
+            if (args[0].length == 10) {
                 switch (args[0]) {
                     case 'key_verify_1':
                         msg.member.roles.add('role_1');
                         msg.member.roles.add('role_verify');
+                        ut.happymsg(msg);
                         break;
                     case 'key_verify_2':
                         msg.member.roles.add('role_2');
                         msg.member.roles.add('role_verify');
+                        ut.happymsg(msg);
                         break;
                 }
             }
