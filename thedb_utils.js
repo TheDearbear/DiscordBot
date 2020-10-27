@@ -4,7 +4,7 @@ function getArgs(input) {
     return args;
 }
 function cmd(input) { return '/' + input.toLowerCase(); }
-function iscommand(message, command) { return message.startsWith(command); }
+function iscommand(message, command) { return message.content.startsWith(command); }
 function isfilled(source) {
     var util = require('util');
     if (util.isArray(source)) {
@@ -19,8 +19,10 @@ function isfilled(source) {
         else return true;
     } else return TypeError('Input must be an array or an object!');
 }
+function happymsg(msg) { msg.reply("You are welcome!").then((msg) => { if (msg.author.bot) msg.delete() }); }
 
 module.exports.getArgs = getArgs;
 module.exports.cmd = cmd;
 module.exports.iscommand = iscommand;
 module.exports.isfilled = isfilled;
+module.exports.happymsg = happymsg;
