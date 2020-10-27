@@ -31,7 +31,7 @@ client.on('message', async msg => {
         //===========================
         //           Radio         ||
         //===========================
-        if (ut.iscommand(ut.cmd('radio'))) {
+        if (ut.iscommand(msg, ut.cmd('radio'))) {
             var path = '';
             if (msg.member.voice.channel) {
                 var connection = await msg.member.voice.channel.join();
@@ -64,7 +64,7 @@ client.on('message', async msg => {
         //===========================
         //   Account Verification  ||
         //===========================
-        if (msg.channel.id == 'channel_verify' && ut.iscommand(ut.cmd('verify')) && args.lenght === 1) {
+        if (msg.channel.id == 'channel_verify' && ut.iscommand(msg, ut.cmd('verify')) && args.lenght === 1) {
             console.log("===============New=verification==============");
             console.log("Verificator ID: " + msg.author.id);
             console.log("Verificator Username: " + msg.author.username);
