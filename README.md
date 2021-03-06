@@ -3,3 +3,4 @@ Installing:
   - Replace/Add Verify keys
   - Replace channels IDs
   - Replace/Add Role IDs
+  - Install packages from package.json
