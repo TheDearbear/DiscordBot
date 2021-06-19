@@ -1,13 +1,5 @@
-function getArgs(input) {
-    var args = input.split(' ');
-    args.shift();
-    return args;
-}
-function cmd(input) { return '/' + input.toLowerCase(); }
-function iscommand(message, command) { return message.content.startsWith(command); }
 function isfilled(source) {
-    var util = require('util');
-    if (util.isArray(source)) {
+    if (Array.isArray(source)) {
         if (source.length === 0) return false;
         else return true;
     } else if (typeof source === 'object') {
@@ -17,12 +9,18 @@ function isfilled(source) {
         }
         if (length === 0) return false;
         else return true;
-    } else return TypeError('Input must be an array or an object!');
+    } else return null;
 }
-function happymsg(msg) { msg.reply("You are welcome!").then((msg) => { if (msg.author.bot) msg.delete() }); }
 
-module.exports.getArgs = getArgs;
-module.exports.cmd = cmd;
-module.exports.iscommand = iscommand;
+String.prototype.cmd = function() { return '/' + this.toLowerCase() };
+String.prototype.getArgs = function() {
+    var args = this.split(' ');
+    args.shift();
+    return args;
+}
+String.prototype.isCommand = function(command) {
+    command = command.cmd();
+    return this.slice(command.length, command.length + 1) == '' || this.slice(command.length, command.length + 1) == ' ';
+}
+
 module.exports.isfilled = isfilled;
-module.exports.happymsg = happymsg;
