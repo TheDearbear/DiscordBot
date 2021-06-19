@@ -40,7 +40,7 @@ client.on('message', async msg => {
         //          Calls          ||
         //===========================
         if (calls.enabled) {
-            if (msg_c.isCommand('call'.cmd())) {
+            if (msg_c.isCommand('call')) {
                 msg.delete();
                 if (msg.member.voice.channel.id == calls.voice_channel) {
                     let notify_channel = client.channels.cache.get(calls.text_channel);
@@ -54,8 +54,8 @@ client.on('message', async msg => {
                 else {
                     msg.channel.send("Please join to VC for calling!");
                 }
+                return;
             }
-            return;
         }
 
         //===========================
