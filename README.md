@@ -8,5 +8,5 @@ Usage:
   - /call
 
 About account verify functional:
-  - I don't will support it for some time because i don't needing in this function.
+  - I don't will support it for some time because i don't need in this function.
   - Second realization of this function will be better than first, but not ideal.
